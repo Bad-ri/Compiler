@@ -1,7 +1,7 @@
 
-package compiler;
+package Controller;
 
-public class Compiler {
+public class Main {
 
     public static void main(String[] args) {
         System.err.println("Test");
