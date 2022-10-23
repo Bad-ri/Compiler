@@ -1,10 +1,11 @@
 
 package Controller;
 
-public class Main {
+import View.GUI;
 
+public class Main {
     public static void main(String[] args) {
-        System.err.println("Test");
-    }
-    
+        GUI frame = new GUI();
+        frame.Frame();
+    } 
 }
