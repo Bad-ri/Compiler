@@ -1,12 +1,17 @@
 
 package View;
 
+import Controller.Calculator;
+import com.sun.jdi.Value;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.lang.ModuleLayer.Controller;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,7 +20,8 @@ import javax.swing.JTextField;
 
 public class GUI extends JFrame {
     public void Frame(){
-    
+        Calculator x = new Calculator();
+        
         JButton Run = new JButton("Generate Lexical Analyser");
         JButton Clear = new JButton("Clear text Area");
         Clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -26,6 +32,7 @@ public class GUI extends JFrame {
         Run.setBounds(100, 110, 90, 25);
         Run.setForeground(Color.WHITE);
         Run.setBackground(Color.BLACK);
+
 
       JLabel Input = new JLabel("Enter The Equation");
       JTextField InputFiled = new JTextField();
@@ -44,9 +51,14 @@ public class GUI extends JFrame {
       Output.setBackground(new Color(100, 20, 70)); 
       InputFiled.setFont(new Font("Verdana", Font.PLAIN, 20));
       OutputFiled.setFont(new Font("Verdana", Font.PLAIN, 20));
-
-
       
+      Run.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent ae){
+      String y = InputFiled.getText();
+      x.Calc(y);
+
+}});
+
         JPanel MainPanel = new JPanel();
         JPanel ButtonPanel = new JPanel();
         JPanel InputPanel = new JPanel();
@@ -65,6 +77,7 @@ public class GUI extends JFrame {
         MainPanel.add(InputPanel, BorderLayout.CENTER);
         MainPanel.add(InfoPanel, BorderLayout.NORTH);
 
+       // InfoPanel.setBackground(new java.awt.Color(51, 204, 0));
 
         
         this.add(MainPanel);
