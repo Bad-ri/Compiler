@@ -55,8 +55,14 @@ public class GUI extends JFrame {
       Run.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent ae){
       String y = InputFiled.getText();
-      x.Calc(y);
-
+      String z = "";
+      z = x.Calc(y);
+      OutputFiled.setText(z);
+}});
+       Clear.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent ae){
+      InputFiled.setText(" ");
+      OutputFiled.setText(" ");
 }});
 
         JPanel MainPanel = new JPanel();
