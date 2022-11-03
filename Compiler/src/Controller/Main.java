@@ -1,11 +1,11 @@
 
 package Controller;
 
-import View.GUI;
+import View.GUI_Input;
 
 public class Main {
     public static void main(String[] args) {
-        GUI frame = new GUI();
+        GUI_Input frame = new GUI_Input();
         frame.Frame();
     } 
 }

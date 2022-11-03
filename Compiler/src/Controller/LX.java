@@ -4,8 +4,8 @@ package Controller;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Calculator {
-    public static String Calc(String y){
+public class LX {
+    public static String Lexical(String y){
         String Target ="ID"; // replacment of the character and string
         String Target2 ="x*x"; // replacment of character multiply by character
         String Result =""; // variable used in the replacment section
@@ -67,6 +67,11 @@ public class Calculator {
         return FinalResult; 
     }
 }
+
+// important REGEX
 // "[a-z||A-Z]*[_||.]*[a-z||A-Z]+"  Read any String and any alpha
 // "\\d"  Read any Number
 // "[+||-||*||\\]"  Read any Symbol
+// "[s]+[q]+[r]+[(]+[\d][,][\d][)]+" Read sqr
+// "[p]+[o]+[w]+[(]+[\d][,][\d][)]+" Read pow
+// "[p]+[i]+" Read pi 
