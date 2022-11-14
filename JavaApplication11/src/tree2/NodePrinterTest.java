@@ -166,8 +166,8 @@ public class NodePrinterTest {
 
     public static void main (String [] args) 
     {
-        String param = "6 7 4 3 8 2 9 5";
-        /*              6
+        String param = "6 7 4 3 8 11 2 9 7 4 5";
+         /*              6
                      4      7
                 3       5       8
             2                       9

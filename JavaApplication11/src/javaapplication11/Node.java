@@ -1,6 +1,16 @@
 
 package javaapplication11;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+
+
 class Trunk
 {
     Trunk prev;
@@ -19,7 +29,7 @@ public class Node
     String data;
     Node left, right;
  
-    Node() {}
+    
     Node(String data)
     {
         this.data = data;
@@ -73,11 +83,11 @@ class Main
         printTree(root.left, trunk, false);
     }
  
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         // Construct above tree
         Node root = new Node("=");
-        root.left = new Node("ID1");
+        root.left = new Node("ID2");
         root.right = new Node("+");
         root.right.left = new Node("-");
         root.right.right = new Node("*");
@@ -85,11 +95,31 @@ class Main
         root.right.left.right = new Node("5");
         root.right.right.left = new Node("5");
         root.right.right.right = new Node("5");
- 
         // print constructed binary tree
-        String x = "";
+
         printTree(root, null, false);
         
         System.out.println();
+        
+        //BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+    //BufferedWriter out = new BufferedWriter(new FileWriter("C:\\Users\\mmesk\\Downloads\\Music\\welcome.txt"));
+    PrintWriter outputfile = new PrintWriter("C:\\Users\\mmesk\\Downloads\\Music\\welcome.txt");
+//replace your System.out.print("your output");
+    outputfile.print("your output");
+    outputfile.close(); 
+        
+        
+        
+   
+        
+        JFrame jf = new JFrame ("Rootnode");
+        jf.setSize (650, 520);
+        jf.setLocationRelativeTo (null);
+        //jf.add();
+        jf.setDefaultCloseOperation (WindowConstants.DISPOSE_ON_CLOSE);
+        jf.setVisible (true);
+        
+       
     }
 }

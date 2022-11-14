@@ -1,7 +1,6 @@
 
 package View;
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -18,6 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -48,14 +48,15 @@ public class GUI_Input extends JFrame {
       Input.setBackground(new Color(100, 20, 70));
       Input.setVerticalAlignment(JLabel.CENTER);
      
-      
+      //x=x+5*5-x
+
       Run.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent ae){
       String y = InputFiled.getText();
       GUI.RUN(y);
 }});
       
-    
+
        JPanel Panel = new JPanel();
        Panel.setLayout(new GridLayout(3, 1));
         JPanel MainPanel = new JPanel();
@@ -78,12 +79,14 @@ public class GUI_Input extends JFrame {
         BorderPanel.add(Panel);
         MainPanel.add(Run, BorderLayout.SOUTH);
         MainPanel.add(BorderPanel, BorderLayout.CENTER);
-        
+
         this.add(MainPanel);
         this.setVisible(true);
         this.setTitle("Compiler");
         this.setSize(500, 330);
         this.setLocation(400,200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        JOptionPane.showMessageDialog(null,"Example of the input \n [z=y+h*5-x] \n ");
     }
 }

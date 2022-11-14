@@ -2,6 +2,7 @@
 package View;
 
 import Controller.LX;
+import Controller.SY;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -9,12 +10,14 @@ import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 public class GUI_Output extends JFrame{
     public void RUN(String User_Input){
         LX x = new LX();
+        SY Y = new SY();
         String z = " ";
         z = x.Lexical(User_Input);
 
@@ -72,11 +75,16 @@ public class GUI_Output extends JFrame{
     border5.setTitleFont(new Font("Verdana", Font.HANGING_BASELINE, 30));
     CodePanel.setBorder(border5);
     
-    
+    String xx = koko(z);       
+    JTextArea Output2 = new  JTextArea(16,30);
+    Output2.setOpaque(false);
+    Output2.setFont(new Font("Verdana", Font.HANGING_BASELINE, 10));
+    Output2.setText(xx);
     
     //add compnants to the panel
         LXPanel.add(Output);
         LXPanel.add(OutputFiled);
+        SYPanel.add(Output2);
         
     //add compnants to the main panel  
         MainPanel.add(LXPanel);
@@ -86,14 +94,24 @@ public class GUI_Output extends JFrame{
         MainPanel.add(OPPanel);
         MainPanel.add(CodePanel);
         
-       
-        
+
         this.add(MainPanel);
         this.setVisible(true);
         this.setTitle("Output");
         this.setSize(1200, 700);
         this.setLocation(90,30);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+        
     }
-    
+    public String koko(String z){
+    String input = z;
+    String result = "";
+    SY call = new SY();
+    result = call.input(input) ;
+    //Y.input(z);
+    return result;
+    }
+   
 }
