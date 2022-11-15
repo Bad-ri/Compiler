@@ -15,10 +15,10 @@ public class LX {
         int Counter = 0 ;
         
         // if string made from 3 or more characters was found replace it with one character
-        Pattern pattern1 = Pattern.compile("[a-z||A-Z][a-z||A-Z]([a-z||A-Z])+", Pattern.CASE_INSENSITIVE);
+        Pattern pattern1 = Pattern.compile("[p]+[i]+", Pattern.CASE_INSENSITIVE);
         Matcher matcher1 = pattern1.matcher(y);
         while(matcher1.find()) {
-           Result = matcher1.replaceAll("x"); 
+           Result = matcher1.replaceAll("3.14"); 
         } 
     if(Result==""){
        Result=y;
@@ -29,6 +29,15 @@ public class LX {
         while(matcher2.find()) {
            Result = matcher2.replaceAll(Target2);  
         }
+        /*
+        Pattern pattern3 = Pattern.compile("[p]+[o]+[w]+[(]+[\\d][,][\\d][)]+", Pattern.CASE_INSENSITIVE);
+        Matcher matcher3 = pattern3.matcher(Result);
+        while(matcher3.find()) {
+           Matcher d = matcher3 ;
+           Result = matcher3.replaceAll("k");  
+        }
+        */
+        
         // finaly replace all characters with the target (id)    
         Pattern pattern = Pattern.compile("[a-z||A-Z]+", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(Result);

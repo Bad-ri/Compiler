@@ -2,6 +2,7 @@
 package View;
 
 import Controller.LX;
+import Controller.SE;
 import Controller.SY;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -81,10 +82,18 @@ public class GUI_Output extends JFrame{
     Output2.setFont(new Font("Verdana", Font.HANGING_BASELINE, 10));
     Output2.setText(xx);
     
+    String yy = toto(z);       
+    JTextArea Output3 = new  JTextArea(16,30);
+    Output3.setOpaque(false);
+    Output3.setFont(new Font("Verdana", Font.HANGING_BASELINE, 10));
+    Output3.setText(yy);
+    
     //add compnants to the panel
         LXPanel.add(Output);
         LXPanel.add(OutputFiled);
         SYPanel.add(Output2);
+        SEPanel.add(Output3);
+
         
     //add compnants to the main panel  
         MainPanel.add(LXPanel);
@@ -109,6 +118,14 @@ public class GUI_Output extends JFrame{
     String input = z;
     String result = "";
     SY call = new SY();
+    result = call.input(input) ;
+    //Y.input(z);
+    return result;
+    }
+    public String toto(String z){
+    String input = z;
+    String result = "";
+    SE call = new SE();
     result = call.input(input) ;
     //Y.input(z);
     return result;

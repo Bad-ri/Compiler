@@ -2,11 +2,10 @@
 package Controller;
 
 import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-// test
-//x=x+5*5-x
-
-public class SY {
+public class SE {
     
     public String input(String z){
     String Result = "";
@@ -109,25 +108,53 @@ public class SY {
         //lex = "";
         }
     }	
+     boolean type;
+     boolean type2;
+
      while (!stack.empty()){
+         type = false ;
+         type2 = false ;
          String V = (String) stack.pop();
          String S = (String) stack.pop();
          Result += "     	         " + S + " \n ";
          Result += "                         /" +"--"+ "\\" + " \n ";
          if(stack.size()==1){
-         String V2 = (String) stack.pop();            
+         String V2 = (String) stack.pop();   
+        Pattern pattern1 = Pattern.compile("\\d", Pattern.CASE_INSENSITIVE);
+        Matcher matcher1 = pattern1.matcher(V);
+        while(matcher1.find()) {
+           type = true ;  
+        }   
+        Pattern pattern2 = Pattern.compile("\\d", Pattern.CASE_INSENSITIVE);
+        Matcher matcher2 = pattern2.matcher(V2);
+        while(matcher2.find()) {
+           type2 = true ;  
+        }   
          Result += "     	     "+ V2+ "   " + V + " \n ";
          }
          else{
          Result += "     	    " + V + "  | " + " \n ";
          }
+         if(type){
+              if(type2){
+              Result += "     	         int to float " + "     int to float"+" \n ";
+              }
+         else{
+              Result += "     	   int to float " + " \n ";
+              } 
+         } 
+         else if(type2){
+         Result += "     	                          int to float " + " \n ";
+         } 
+         
+         
      }
-    // Result += "     	           " + lex;  
+     //Result += "     	           " + lex;  
      /*
      Result = "mohamed \n mohamed";
         return Result;
      */
      return Result;
     }  
+    
 }
-
