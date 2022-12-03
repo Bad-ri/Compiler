@@ -86,6 +86,6 @@ public class GUI_Input extends JFrame {
         this.setSize(500, 330);
         this.setLocation(400,200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(null,"Example of the input \n [z=y+h*pi-x] \n ");
+        JOptionPane.showMessageDialog(null,"Example of the input \n [ [d=x+2*pi] [z=y+h*pi-x] ] \n ");
     }
 }

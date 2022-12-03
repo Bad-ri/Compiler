@@ -1,7 +1,9 @@
 
 package View;
 
+import Controller.ICG;
 import Controller.LX;
+import Controller.OP;
 import Controller.SE;
 import Controller.SY;
 import java.awt.Color;
@@ -19,6 +21,7 @@ public class GUI_Output extends JFrame{
     public void RUN(String User_Input){
         LX x = new LX();
         SY Y = new SY();
+        ICG G = new ICG();
         String z = " ";
         z = x.Lexical(User_Input);
 
@@ -88,13 +91,27 @@ public class GUI_Output extends JFrame{
     Output3.setFont(new Font("Verdana", Font.HANGING_BASELINE, 10));
     Output3.setText(yy);
     
+    String vv = gogo(z);       
+    JTextArea Output4 = new  JTextArea(16,30);
+    Output4.setOpaque(false);
+    Output4.setFont(new Font("Verdana", Font.HANGING_BASELINE, 15));
+    Output4.setText(vv);
+    
+    String zz = soso(z);       
+    JTextArea Output5 = new  JTextArea(16,30);
+    Output5.setOpaque(false);
+    Output5.setFont(new Font("Verdana", Font.HANGING_BASELINE, 15));
+    Output5.setText(zz);
+    
     //add compnants to the panel
         LXPanel.add(Output);
         LXPanel.add(OutputFiled);
         SYPanel.add(Output2);
         SEPanel.add(Output3);
+        ICGPanel.add(Output4);
+        OPPanel.add(Output5);
 
-        
+
     //add compnants to the main panel  
         MainPanel.add(LXPanel);
         MainPanel.add(SYPanel);
@@ -129,6 +146,24 @@ public class GUI_Output extends JFrame{
     result = call.input(input) ;
     //Y.input(z);
     return result;
+    }
+
+    private String gogo(String z) {
+    String input = z;
+    String result = "";
+    ICG call = new ICG();
+    result = call.input(input) ;
+    //Y.input(z);
+    return result;    
+    }
+
+    private String soso(String z) {
+    String input = z;
+    String result = "";
+    OP call = new OP();
+    result = call.input(input) ;
+    //Y.input(z);
+    return result;    
     }
    
 }

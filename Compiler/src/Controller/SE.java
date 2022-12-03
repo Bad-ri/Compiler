@@ -128,7 +128,7 @@ public class SE {
         Pattern pattern2 = Pattern.compile("\\d", Pattern.CASE_INSENSITIVE);
         Matcher matcher2 = pattern2.matcher(V2);
         while(matcher2.find()) {
-           type2 = true ;  
+           //type2 = true ;  
         }   
          Result += "     	     "+ V2+ "   " + V + " \n ";
          }
@@ -140,7 +140,7 @@ public class SE {
               Result += "     	         int to float " + "     int to float"+" \n ";
               }
          else{
-              Result += "     	   int to float " + " \n ";
+              Result += "  int to float " + " \n ";
               } 
          } 
          else if(type2){
