@@ -15,7 +15,7 @@ public class LX {
         int Counter = 0 ;
         
         // if string made from 3 or more characters was found replace it with one character
-        Pattern pattern1 = Pattern.compile("[p]+[i]+", Pattern.CASE_INSENSITIVE);
+        Pattern pattern1 = Pattern.compile("pi", Pattern.CASE_INSENSITIVE);
         Matcher matcher1 = pattern1.matcher(y);
         while(matcher1.find()) {
            Result = matcher1.replaceAll("3.14"); 
@@ -77,7 +77,7 @@ public class LX {
     }
 }
 
-// important REGEX
+//  REGEX
 // "[a-z||A-Z]*[_||.]*[a-z||A-Z]+"  Read any String and any alpha
 // "\\d"  Read any Number
 // "[+||-||*||\\]"  Read any Symbol
