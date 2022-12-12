@@ -58,17 +58,36 @@ public class ICG {
     for(int j = 4 ; j >= 0 ; j--){
         String temp = new_list[j];
          if(temp.contains("int")){
-             Result+=new_list[j]+"\n";
+             String trans = new_list[j].replaceAll("\\s", "");  
+             Result+="            T0 = "+trans+"\n";
          }
          else if(j==2){
-            Result+=new_list[j];
-            String now = new_list[j-1] ;
+             String now = new_list[j-1] ;
             if(now.contains("*")){
-            Result+="*"+"\n";
+            now="*";
          }
             else if(now.contains("\\")){
-            Result+="\\"+"\n";
-         }    
+            now="\\";
+         }         
+            boolean flag = false;
+            int onetime = 0 ;
+            Result+="            T1 = ";
+            String parts[] = new_list[j].split("\\s");
+            for(String part: parts) {
+            //String semi = part.replaceAll("\\s", "");
+            if(part.equals("")){}
+            else{
+             Result+=part; 
+             flag = true ;
+             onetime++;
+            }
+            if(flag&&onetime==1){
+             Result+=now; 
+             flag=false;
+             onetime++;
+            }                  
+        }
+            Result+="\n";               
          }
          else if(j==1){
             String now = new_list[j] ;
@@ -77,8 +96,11 @@ public class ICG {
         matcher = pattern1.matcher(now);
         while(matcher.find()) {
             answear = matcher.replaceAll("");
-         }   
-        Result+=answear+new_list[j-1]+"\n";
+         }  
+        String symbol = new_list[j-1].replaceAll("\\s", "");  
+        String exp = answear.replaceAll("\\s", "");      
+        Result+="            T2 = "+exp+symbol+" T1"+"\n";
+                Result+="            id1 = T2"+"\n";
          }       
         
         
