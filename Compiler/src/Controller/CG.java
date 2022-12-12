@@ -1,13 +1,10 @@
-
 package Controller;
 
 import java.util.Scanner;
-import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ICG {
-
+public class CG {
     public String input(String z){
         String answear = "";
         int i = 0 ;
@@ -57,11 +54,7 @@ public class ICG {
         }
         for(int j = 4 ; j >= 0 ; j--){
             String temp = new_list[j];
-            if(temp.contains("int")){
-                String trans = new_list[j].replaceAll("\\s", "");
-                Result+="            T0 = "+trans+"\n";
-            }
-            else if(j==2){
+            if(j==2){
                 String now = new_list[j-1] ;
                 if(now.contains("*")){
                     now="*";
@@ -99,28 +92,12 @@ public class ICG {
                 }
                 String symbol = new_list[j-1].replaceAll("\\s", "");
                 String exp = answear.replaceAll("\\s", "");
-                Result+="            T2 = "+exp+symbol+" T1"+"\n";
-                Result+="            id1 = T2"+"\n";
+                Result+="            id1 = "+exp+symbol+" T1"+"\n";
             }
 
 
         }
-
-    /*
-    if(lines[i].startsWith("i")){
-        lines[i]="";
-    }
-    */
-
-/*
-    Scanner scanner = new Scanner(z);
-    while (scanner.hasNextLine()) {
-    String line = scanner.nextLine();
-    Result += line+"\n";
-    }
-    scanner.close();
-    */
-
         return Result;
     }
+
 }

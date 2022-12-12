@@ -13,21 +13,21 @@ public class LX {
         String x = "";
         String z = "";
         int Counter = 0 ;
-        
+
         // if string made from 3 or more characters was found replace it with one character
         Pattern pattern1 = Pattern.compile("pi", Pattern.CASE_INSENSITIVE);
         Matcher matcher1 = pattern1.matcher(y);
         while(matcher1.find()) {
-           Result = matcher1.replaceAll("3.14"); 
-        } 
-    if(Result==""){
-       Result=y;
+            Result = matcher1.replaceAll("3.14");
+        }
+        if(Result==""){
+            Result=y;
         }
         // if string made from 2 characters was found replace it with two characters separated with multiplication symbol in the middle   
         Pattern pattern2 = Pattern.compile("[a-z||A-Z][a-z||A-Z]", Pattern.CASE_INSENSITIVE);
         Matcher matcher2 = pattern2.matcher(Result);
         while(matcher2.find()) {
-           Result = matcher2.replaceAll(Target2);  
+            Result = matcher2.replaceAll(Target2);
         }
         /*
         Pattern pattern3 = Pattern.compile("[p]+[o]+[w]+[(]+[\\d][,][\\d][)]+", Pattern.CASE_INSENSITIVE);
@@ -37,43 +37,43 @@ public class LX {
            Result = matcher3.replaceAll("k");  
         }
         */
-        
+
         // finaly replace all characters with the target (id)    
         Pattern pattern = Pattern.compile("[a-z||A-Z]+", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(Result);
         while(matcher.find()) {
-           Result = matcher.replaceAll(Target);  
+            Result = matcher.replaceAll(Target);
         }
-        
+
         // replace the string(ID) with (id) with its count          
-   for(int i = 0 ; i<Result.length() ; i++){ 
-       
-       if(i+2 >= Result.length()){
-          x = Result.substring(i, Result.length());
-       }
-       else{
-          x = Result.substring(i, i+2); 
-       }
-       if(x.equals(Target)){
-          Counter++;
-          x="id"+Counter;
-         FinalResult+=x;       
-       }
-       else{
-         z=x.substring(1);
-         if(z.equals("I")||z.equals("D")){
-         }
-         // Error handel when found (_)
-         else if(z.equals("_")){
-         FinalResult="Syntax Error"; 
-         break;
-       }         
-         else{
-           FinalResult+=z;      
-          }
-       }  
-   }
-        return FinalResult; 
+        for(int i = 0 ; i<Result.length() ; i++){
+
+            if(i+2 >= Result.length()){
+                x = Result.substring(i, Result.length());
+            }
+            else{
+                x = Result.substring(i, i+2);
+            }
+            if(x.equals(Target)){
+                Counter++;
+                x="id"+Counter;
+                FinalResult+=x;
+            }
+            else{
+                z=x.substring(1);
+                if(z.equals("I")||z.equals("D")){
+                }
+                // Error handel when found (_)
+                else if(z.equals("_")){
+                    FinalResult="Syntax Error";
+                    break;
+                }
+                else{
+                    FinalResult+=z;
+                }
+            }
+        }
+        return FinalResult;
     }
 }
 
