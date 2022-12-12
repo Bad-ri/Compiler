@@ -91,7 +91,7 @@ public class GUI_Output extends JFrame{
     Output3.setFont(new Font("Verdana", Font.HANGING_BASELINE, 10));
     Output3.setText(yy);
     
-    String vv = gogo(z);       
+    String vv = gogo(yy);       
     JTextArea Output4 = new  JTextArea(16,30);
     Output4.setOpaque(false);
     Output4.setFont(new Font("Verdana", Font.HANGING_BASELINE, 15));
