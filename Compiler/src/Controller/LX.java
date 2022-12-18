@@ -23,6 +23,28 @@ public class LX {
         if(Result==""){
             Result=y;
         }
+        // reduce //
+        //2*3.14+x
+        String f = Result ;
+        String op = "";
+        //(\d(\d.\d\d)r)
+        Pattern pattern30 = Pattern.compile("\\d[*|+|-|\\\\](\\d.\\d\\d)", Pattern.CASE_INSENSITIVE);
+        Matcher matcher30 = pattern30.matcher(f);
+        while(matcher30.find()) {
+            op = f.substring(2,3);
+            float ff = Integer.parseInt(op);
+            ff = (float) (ff * 3.14);
+            Result = f.substring(0,2)+ff+f.substring(8);
+        }
+        Pattern pattern40 = Pattern.compile("(\\d(\\d.\\d\\d)r)", Pattern.CASE_INSENSITIVE);
+        Matcher matcher40 = pattern40.matcher(f);
+        while(matcher40.find()) {
+            op = f.substring(2,3);
+            float ff = Integer.parseInt(op);
+            ff = (float) (ff * 3.14);
+            Result = f.substring(0,2)+ff+"*"+f.substring(7);
+        }
+
         // if string made from 2 characters was found replace it with two characters separated with multiplication symbol in the middle   
         Pattern pattern2 = Pattern.compile("[a-z||A-Z][a-z||A-Z]", Pattern.CASE_INSENSITIVE);
         Matcher matcher2 = pattern2.matcher(Result);

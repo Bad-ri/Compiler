@@ -85,7 +85,7 @@ public class GUI_Output extends JFrame{
         Output2.setFont(new Font("Verdana", Font.HANGING_BASELINE, 10));
         Output2.setText(xx);
 
-        String yy = toto(z);
+        String yy = toto(xx,z);
         JTextArea Output3 = new  JTextArea(16,30);
         Output3.setOpaque(false);
         Output3.setFont(new Font("Verdana", Font.HANGING_BASELINE, 10));
@@ -146,11 +146,11 @@ public class GUI_Output extends JFrame{
         //Y.input(z);
         return result;
     }
-    public String toto(String z){
+    public String toto(String z, String s){
         String input = z;
         String result = "";
         SE call = new SE();
-        result = call.input(input) ;
+        result = call.input(input,s) ;
         //Y.input(z);
         return result;
     }
