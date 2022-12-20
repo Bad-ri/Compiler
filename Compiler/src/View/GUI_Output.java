@@ -1,11 +1,8 @@
 
 package View;
 
-import Controller.ICG;
-import Controller.LX;
-import Controller.OP;
-import Controller.SE;
-import Controller.SY;
+import Controller.*;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -91,23 +88,23 @@ public class GUI_Output extends JFrame{
         Output3.setFont(new Font("Verdana", Font.HANGING_BASELINE, 10));
         Output3.setText(yy);
 
-        String vv = gogo(yy);
+        String vv = gogo(yy,z);
         JTextArea Output4 = new  JTextArea(16,30);
         Output4.setOpaque(false);
         Output4.setFont(new Font("Verdana", Font.HANGING_BASELINE, 15));
         Output4.setText(vv);
 
-        String zz = soso(yy);
+        String zz = soso(yy,z);
         JTextArea Output5 = new  JTextArea(16,30);
         Output5.setOpaque(false);
         Output5.setFont(new Font("Verdana", Font.HANGING_BASELINE, 15));
         Output5.setText(zz);
 
-        String tt = roro(yy);
+        String tt = roro(z);
         JTextArea Output6 = new  JTextArea(16,30);
         Output6.setOpaque(false);
         Output6.setFont(new Font("Verdana", Font.HANGING_BASELINE, 15));
-        Output6.setText(zz);
+        Output6.setText(tt);
 
         //add compnants to the panel
         LXPanel.add(Output);
@@ -155,27 +152,27 @@ public class GUI_Output extends JFrame{
         return result;
     }
 
-    private String gogo(String z) {
+    private String gogo(String z,String lex) {
         String input = z;
         String result = "";
         ICG call = new ICG();
-        result = call.input(input) ;
+        result = call.input(input,lex) ;
         //Y.input(z);
         return result;
     }
 
-    private String soso(String z) {
+    private String soso(String z , String lex) {
         String input = z;
         String result = "";
         OP call = new OP();
-        result = call.input(input) ;
+        result = call.input(input,lex) ;
         //Y.input(z);
         return result;
     }
     private String roro(String z) {
         String input = z;
         String result = "";
-        OP call = new OP();
+        CG call = new CG();
         result = call.input(input) ;
         return result;
     }

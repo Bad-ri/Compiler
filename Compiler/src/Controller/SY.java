@@ -75,9 +75,13 @@ public class SY {
             }
             // Don't forget to add the last term to the list of operations
             operations.add(currentTerm.toString());
-
+            int g = 0 ;
+            for (String operation : operations) {
+                final_list[g]=operation;
+                g++;
+            }
             //call
-            Result = FOP(lex,final_list);
+            Result += FOP(lex,final_list);
         }
        else if (count == 1){
             Result += "     	     " + lex.substring(4,5) + " \n ";
@@ -108,9 +112,7 @@ public class SY {
                Result += NOP(lex,lex2);
            }
        }
-        for ( int i = 0 ; i<7; i++) {
-            System.out.println(final_list[i]);
-        }
+
         return Result;
     }
     public String RHS(String lex,String lex2){

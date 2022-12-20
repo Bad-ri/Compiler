@@ -43,7 +43,13 @@ public class SE {
                else if(temp.equals("3.14")){}
                else if(temp.equals("+") || temp.equals("-") || temp.equals("*")|| temp.equals("\\")){}
                else{
-                   Result+="\n           "+"int to float ("+temp+")";
+                   Pattern pattern1 = Pattern.compile("(\\d.\\d\\d)", Pattern.CASE_INSENSITIVE);
+                   Matcher matcher = pattern1.matcher(temp);
+                   if(matcher.find()) {
+                   }
+                   else{
+                       Result+="\n           "+"int to float ("+temp+")";
+                   }
                }
            }
         }
