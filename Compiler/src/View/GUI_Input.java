@@ -86,6 +86,6 @@ public class GUI_Input extends JFrame {
         this.setSize(500, 330);
         this.setLocation(400,200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(null,"Example of the input \n [ EXP -> EXP = EXP OP EXP OP EXP ] \n [ EXP -> String , Number , Pi ] \n [ OP -> + | - | \\ | * ] \n");
+        JOptionPane.showMessageDialog(null,"Example of the input \n [ EXP -> EXP = EXP OP EXP OP EXP OP EXP  ] \n [ EXP -> String , Number , Pi ] \n [ OP -> + | - | \\ | * ] \n");
     }
 }
