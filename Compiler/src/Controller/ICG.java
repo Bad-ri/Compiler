@@ -64,7 +64,7 @@ public class ICG {
                     else if(temp.equals("3.14")){}
                     else if(temp.equals("+") || temp.equals("-") || temp.equals("*")|| temp.equals("\\")){}
                     else{
-                        Pattern pattern1 = Pattern.compile("(\\d.\\d\\d)", Pattern.CASE_INSENSITIVE);
+                        Pattern pattern1 = Pattern.compile("(\\d.\\d)", Pattern.CASE_INSENSITIVE);
                         Matcher matcher = pattern1.matcher(temp);
                         if(matcher.find()) {
                         }
@@ -119,7 +119,7 @@ public class ICG {
                     else if(temp.equals("3.14")){}
                     else if(temp.equals("+") || temp.equals("-") || temp.equals("*")|| temp.equals("\\")){}
                     else{
-                        Pattern pattern1 = Pattern.compile("(\\d.\\d\\d)", Pattern.CASE_INSENSITIVE);
+                        Pattern pattern1 = Pattern.compile("(\\d.\\d)", Pattern.CASE_INSENSITIVE);
                         Matcher matcher = pattern1.matcher(temp);
                         if(matcher.find()) {
                         }
@@ -182,7 +182,7 @@ public class ICG {
                     else if(temp.equals("3.14")){}
                     else if(temp.equals("+") || temp.equals("-") || temp.equals("*")|| temp.equals("\\")){}
                     else{
-                        Pattern pattern1 = Pattern.compile("(\\d.\\d\\d)", Pattern.CASE_INSENSITIVE);
+                        Pattern pattern1 = Pattern.compile("(\\d.\\d)", Pattern.CASE_INSENSITIVE);
                         Matcher matcher = pattern1.matcher(temp);
                         if(matcher.find()) {
                         }

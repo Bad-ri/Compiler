@@ -111,6 +111,12 @@ public class SY {
            else if (addop>mulop){
                Result += NOP(lex,lex2);
            }
+//           else{
+//               Result += "successfuly entered";
+//               /*
+//
+//               */
+//           }
        }
 
         return Result;
@@ -142,6 +148,32 @@ public class SY {
             Result += "     	     "+ lex.substring(0,3)+ "   " + lex.substring(8,9) + " \n ";
             Result += "                             /" +"--"+ "\\" + " \n ";
             Result += "     	         "+ lex.substring(4,8)+ "   " + lex.substring(9) + " \n ";
+            return Result;
+        }
+        //newwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+
+        //id2-3.14\3.14
+        Pattern pattern22 = Pattern.compile("(id\\d)[+|-](\\d.\\d)[*|\\\\]", Pattern.CASE_INSENSITIVE);
+        matcher = pattern22.matcher(lex);
+        while(matcher.find()) {
+            Result += "     	         " + lex.substring(3,4) + " \n ";
+            Result += "                         /" +"--"+ "\\" + " \n ";
+            Result += "     	     "+ lex.substring(0,3)+ "   " + lex.substring(7,8) + " \n ";
+            Result += "                             /" +"--"+ "\\" + " \n ";
+            Result += "     	         "+ lex.substring(4,7)+ "   " + lex.substring(8) + " \n ";
+            return Result;
+        }
+        //newwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        //x=0.8+x*z
+        //id2-3.14\3.14
+        Pattern pattern24 = Pattern.compile("(\\d.\\d)[+|-](id\\d)[*|\\\\]", Pattern.CASE_INSENSITIVE);
+        matcher = pattern24.matcher(lex);
+        while(matcher.find()) {
+            Result += "     	         " + lex.substring(3,4) + " \n ";
+            Result += "                         /" +"--"+ "\\" + " \n ";
+            Result += "     	     "+ lex.substring(0,3)+ "   " + lex.substring(7,8) + " \n ";
+            Result += "                             /" +"--"+ "\\" + " \n ";
+            Result += "     	         "+ lex.substring(4,7)+ "   " + lex.substring(8) + " \n ";
             return Result;
         }
         //id2-id3*5
